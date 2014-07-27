@@ -13,6 +13,9 @@
 		358CA4271985C6C700001A06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 358CA4251985C6C700001A06 /* Main.storyboard */; };
 		358CA4291985C6C700001A06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 358CA4281985C6C700001A06 /* Images.xcassets */; };
 		358CA4351985C6C700001A06 /* Overdue_TasklistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 358CA4341985C6C700001A06 /* Overdue_TasklistTests.m */; };
+		358CA4401985C7C200001A06 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 358CA43F1985C7C200001A06 /* AddTaskViewController.m */; };
+		358CA4431985C7D000001A06 /* DetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 358CA4421985C7D000001A06 /* DetailTaskViewController.m */; };
+		358CA4461985C7DD00001A06 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 358CA4451985C7DD00001A06 /* EditTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,12 @@
 		358CA42E1985C6C700001A06 /* Overdue TasklistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Overdue TasklistTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		358CA4331985C6C700001A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		358CA4341985C6C700001A06 /* Overdue_TasklistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Overdue_TasklistTests.m; sourceTree = "<group>"; };
+		358CA43E1985C7C200001A06 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
+		358CA43F1985C7C200001A06 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
+		358CA4411985C7D000001A06 /* DetailTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskViewController.h; sourceTree = "<group>"; };
+		358CA4421985C7D000001A06 /* DetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskViewController.m; sourceTree = "<group>"; };
+		358CA4441985C7DD00001A06 /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
+		358CA4451985C7DD00001A06 /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +93,12 @@
 				358CA4221985C6C700001A06 /* ViewController.h */,
 				358CA4231985C6C700001A06 /* ViewController.m */,
 				358CA4251985C6C700001A06 /* Main.storyboard */,
+				358CA43E1985C7C200001A06 /* AddTaskViewController.h */,
+				358CA43F1985C7C200001A06 /* AddTaskViewController.m */,
+				358CA4411985C7D000001A06 /* DetailTaskViewController.h */,
+				358CA4421985C7D000001A06 /* DetailTaskViewController.m */,
+				358CA4441985C7DD00001A06 /* EditTaskViewController.h */,
+				358CA4451985C7DD00001A06 /* EditTaskViewController.m */,
 				358CA4281985C6C700001A06 /* Images.xcassets */,
 				358CA41B1985C6C700001A06 /* Supporting Files */,
 			);
@@ -216,8 +231,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				358CA4241985C6C700001A06 /* ViewController.m in Sources */,
+				358CA4401985C7C200001A06 /* AddTaskViewController.m in Sources */,
 				358CA4211985C6C700001A06 /* AppDelegate.m in Sources */,
+				358CA4461985C7DD00001A06 /* EditTaskViewController.m in Sources */,
 				358CA41E1985C6C700001A06 /* main.m in Sources */,
+				358CA4431985C7D000001A06 /* DetailTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
