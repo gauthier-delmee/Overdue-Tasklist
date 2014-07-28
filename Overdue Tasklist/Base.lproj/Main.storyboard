@@ -15,11 +15,42 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="A4Q-GG-roT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="63" width="320" height="577"/>
+                                </variation>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="A4Q-GG-roT"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="A4Q-GG-roT"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="q4E-53-FCg"/>
+                    <navigationItem key="navigationItem" id="q4E-53-FCg">
+                        <barButtonItem key="leftBarButtonItem" title="Re-order" id="Rj4-Uk-IhA">
+                            <connections>
+                                <action selector="reoderBarButtonItemPressed:" destination="vXZ-lx-hvc" id="MdX-Q1-PE3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add task" id="R12-rG-KAL">
+                            <connections>
+                                <action selector="addTaskBarButtonItemPressed:" destination="vXZ-lx-hvc" id="pTQ-ou-mNS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="A4Q-GG-roT" id="zHH-Rq-hh7"/>
                         <segue destination="PxK-SI-TAg" kind="presentation" identifier="toAddTaskViewControllerSegue" id="w2j-0p-DYF"/>
                         <segue destination="i2C-ne-1o5" kind="show" identifier="toDetailTaskViewControllerSegue" id="aVH-0L-wDx"/>
                     </connections>
@@ -37,11 +68,66 @@
                         <viewControllerLayoutGuide type="bottom" id="8sx-af-aG4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fbc-Ih-BJ7">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8v-Bm-G1g">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="94" width="280" height="20.5"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62g-E9-LSu">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="123" width="280" height="20.5"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEu-E1-WHD">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="152" width="280" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="W8v-Bm-G1g"/>
+                                <exclude reference="62g-E9-LSu"/>
+                                <exclude reference="QEu-E1-WHD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="W8v-Bm-G1g"/>
+                                <include reference="62g-E9-LSu"/>
+                                <include reference="QEu-E1-WHD"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Edit" id="ILk-NX-GQb">
+                            <connections>
+                                <action selector="editBarButtonItemPressed:" destination="i2C-ne-1o5" id="pgp-wa-w4v"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="labelDueDate" destination="QEu-E1-WHD" id="rjo-Oh-aYh"/>
+                        <outlet property="labelTaskDescription" destination="62g-E9-LSu" id="aeH-ug-ymR"/>
+                        <outlet property="labelTaskName" destination="W8v-Bm-G1g" id="AHk-PY-jY6"/>
                         <segue destination="V1W-FR-Y38" kind="show" identifier="toEditTaskViewControllerSegue" id="zmg-b7-Ipa"/>
                     </connections>
                 </viewController>
@@ -58,10 +144,65 @@
                         <viewControllerLayoutGuide type="bottom" id="kdQ-SB-bj0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="i5P-gf-4Ip">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Byc-vZ-HHj">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="88" width="280" height="30"/>
+                                </variation>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7F7-pl-jzn">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.89176345420000003" green="0.94874121040000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="126" width="280" height="249"/>
+                                </variation>
+                            </textView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hON-Pt-zRP">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="428202953.006531">
+                                    <!--<__NSDate Class=2014-07-28 01:15:53 +0000 timeInterval=428202953.006531 ISO8601=2014-07-28T11:15:53.007+1000>-->
+                                </date>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="383" width="280" height="162"/>
+                                </variation>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Byc-vZ-HHj"/>
+                                <exclude reference="7F7-pl-jzn"/>
+                                <exclude reference="hON-Pt-zRP"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Byc-vZ-HHj"/>
+                                <include reference="7F7-pl-jzn"/>
+                                <include reference="hON-Pt-zRP"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Save" id="aIk-cd-iFc">
+                            <connections>
+                                <action selector="saveBarButtonItemPressed:" destination="V1W-FR-Y38" id="WL1-Z9-tuw"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <connections>
+                        <outlet property="dueDateDatePicker" destination="hON-Pt-zRP" id="Jmq-dZ-KP2"/>
+                        <outlet property="textFieldTaskName" destination="Byc-vZ-HHj" id="dKH-BG-ZOW"/>
+                        <outlet property="textViewTaskDescription" destination="7F7-pl-jzn" id="6cb-g3-OXl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7C-iJ-ciU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,10 +217,86 @@
                         <viewControllerLayoutGuide type="bottom" id="wbe-AN-qbO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6zI-mH-HEJ">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Dy-Lm-6oz">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="53" width="280" height="30"/>
+                                </variation>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUf-BT-9Vd">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.89176345419983738" green="0.94874121042051252" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="91" width="280" height="249"/>
+                                </variation>
+                            </textView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="QJH-cI-QOr">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="428202590.09483898">
+                                    <!--<__NSDate Class=2014-07-28 01:09:50 +0000 timeInterval=428202590.094839 ISO8601=2014-07-28T11:09:50.095+1000>-->
+                                </date>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="348" width="280" height="162"/>
+                                </variation>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hw-FR-5zP">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Add Task">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="518" width="145" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="addTaskButtonPressed:" destination="PxK-SI-TAg" eventType="touchUpInside" id="9oT-cP-fRU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVq-ux-pbX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="155" y="518" width="145" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="PxK-SI-TAg" eventType="touchUpInside" id="aBH-z6-Dob"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8Dy-Lm-6oz"/>
+                                <exclude reference="xUf-BT-9Vd"/>
+                                <exclude reference="QJH-cI-QOr"/>
+                                <exclude reference="8hw-FR-5zP"/>
+                                <exclude reference="HVq-ux-pbX"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="8Dy-Lm-6oz"/>
+                                <include reference="xUf-BT-9Vd"/>
+                                <include reference="QJH-cI-QOr"/>
+                                <include reference="8hw-FR-5zP"/>
+                                <include reference="HVq-ux-pbX"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="dueDateDatePicker" destination="QJH-cI-QOr" id="wrn-VT-cbG"/>
+                        <outlet property="textFieldTaskName" destination="8Dy-Lm-6oz" id="c7S-Ep-g7O"/>
+                        <outlet property="textViewTaskDescription" destination="xUf-BT-9Vd" id="5DT-ig-U8w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Uv-4m-YFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,4 +10,10 @@
 
 @interface DetailTaskViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *labelTaskName;
+@property (strong, nonatomic) IBOutlet UILabel *labelTaskDescription;
+@property (strong, nonatomic) IBOutlet UILabel *labelDueDate;
+
+- (IBAction)editBarButtonItemPressed:(UIBarButtonItem *)sender;
+
 @end

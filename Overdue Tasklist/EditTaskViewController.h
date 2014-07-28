@@ -10,4 +10,10 @@
 
 @interface EditTaskViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *textFieldTaskName;
+@property (strong, nonatomic) IBOutlet UITextView *textViewTaskDescription;
+@property (strong, nonatomic) IBOutlet UIDatePicker *dueDateDatePicker;
+
+- (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender;
+
 @end

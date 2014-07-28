@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)reoderBarButtonItemPressed:(UIBarButtonItem *)sender;
+- (IBAction)addTaskBarButtonItemPressed:(UIBarButtonItem *)sender;
+
 
 @end
 
