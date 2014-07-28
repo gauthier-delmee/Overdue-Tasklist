@@ -46,9 +46,27 @@
 }
 */
 
+#pragma mark - Actions
+
 - (IBAction)addTaskButtonPressed:(UIButton *)sender {
+    [self.delegate didCancel];
 }
 
 - (IBAction)cancelButtonPressed:(UIButton *)sender {
+    Task *newTask = [self returnNewTask];
+    
+    [self.delegate didAddTask:newTask];
+}
+
+#pragma mark - Helper Methods
+-(Task *)returnNewTask{
+    Task *addedTask = [[Task alloc] init];
+    
+    addedTask.title = self.textFieldTaskName.text;
+    addedTask.description = self.textViewTaskDescription.text;
+    addedTask.date = self.dueDateDatePicker.date;
+    addedTask.completion = NO;
+    
+    return addedTask;
 }
 @end
