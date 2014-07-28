@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Task.h"
 
 @interface ViewController ()
             
@@ -15,6 +16,14 @@
 
 @implementation ViewController
             
+-(NSMutableArray *)objectTasks{
+    if (!_taskObjects) {
+        _taskObjects = [[NSMutableArray alloc] init];
+    }
+    
+    return _taskObjects;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *taskObjects;
 
 - (IBAction)reoderBarButtonItemPressed:(UIBarButtonItem *)sender;
 - (IBAction)addTaskBarButtonItemPressed:(UIBarButtonItem *)sender;
