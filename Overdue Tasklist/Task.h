@@ -12,6 +12,7 @@
 #define TASK_DESCRIPTION @"description"
 #define TASK_DUE_DATE @"date"
 #define TASK_COMPLETION @"completion"
+#define ADDED_TASKS_OBJECTS_KEY @"Added Tasks Objects Array"
 
 @interface Task : NSObject
 
@@ -19,5 +20,7 @@
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) NSDate *date;
 @property (nonatomic) BOOL completion;
+
+-(id)initWithData:(NSDictionary *)data;
 
 @end
