@@ -17,7 +17,7 @@
 
 @implementation ViewController
             
--(NSMutableArray *)objectTasks{
+-(NSMutableArray *)taskObjects{
     if (!_taskObjects) {
         _taskObjects = [[NSMutableArray alloc] init];
     }
@@ -28,6 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSArray *tasksAsPropertyLists = [[NSUserDefaults standardUserDefaults] arrayForKey:ADDED_TASKS_OBJECTS_KEY];
+    for (NSDictionary *dictionary in tasksAsPropertyLists) {
+        Task *taskObject = [self taskObjectForDictionary:dictionary];
+        [self.taskObjects addObject:taskObject];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,7 +55,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([sender isKindOfClass:[UIBarButtonItem class]] && [segue.destinationViewController isKindOfClass:[AddTaskViewController class]]) {
         AddTaskViewController *addTaskViewController = segue.destinationViewController;
-        AddTaskViewController.delegate = self;
+        addTaskViewController.delegate = self;
     }
 }
 
@@ -58,6 +65,7 @@
 }
 
 -(void)didAddTask:(Task *)task{
+    
     [self.taskObjects addObject:task];
     
     NSMutableArray *taskObjectsAsPropertyLists = [[[NSUserDefaults standardUserDefaults] arrayForKey:ADDED_TASKS_OBJECTS_KEY] mutableCopy];
@@ -75,9 +83,15 @@
 
 #pragma mark - Helper Methods
 -(NSDictionary *)taskObjectsAsAPropertyList:(Task *)taskObject{
-    NSDictionary *dictionary = @{TASK_TITLE : taskObject.title, TASK_DESCRIPTION : taskObject.description, TASK_DUE_DATE : taskObject.date, TASK_COMPLETION : taskObject.completion}
+    NSDictionary *dictionary = @{TASK_TITLE : taskObject.title, TASK_DESCRIPTION : taskObject.description, TASK_DUE_DATE : taskObject.date, TASK_COMPLETION : [NSNumber numberWithBool:taskObject.completion]};
     
     return dictionary;
+}
+
+-(Task *)taskObjectForDictionary:(NSDictionary *)dictionary{
+    Task *taskObject = [[Task alloc] initWithData:dictionary];
+    
+    return taskObject;
 }
 
 

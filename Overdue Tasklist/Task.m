@@ -21,10 +21,12 @@
     self = [super init];
     
     //initialize the object instance with data passed throug the NSDictionary object
-    self.title = data[TASK_TITLE];
-    self.description = data[TASK_DESCRIPTION];
-    self.date = data[TASK_DUE_DATE];
-    self.completion = data[TASK_COMPLETION];
+    if (self) {
+        self.title = data[TASK_TITLE];
+        self.description = data[TASK_DESCRIPTION];
+        self.date = data[TASK_DUE_DATE];
+        self.completion = [data[TASK_COMPLETION] boolValue];
+    }
     
     return self;
 }

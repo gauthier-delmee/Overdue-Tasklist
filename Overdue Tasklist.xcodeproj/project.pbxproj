@@ -70,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3520C23B19865B3500059AAC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3520C2381985DFA400059AAC /* Task.h */,
+				3520C2391985DFA400059AAC /* Task.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		358CA40F1985C6C700001A06 = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +108,7 @@
 				358CA4421985C7D000001A06 /* DetailTaskViewController.m */,
 				358CA4441985C7DD00001A06 /* EditTaskViewController.h */,
 				358CA4451985C7DD00001A06 /* EditTaskViewController.m */,
-				3520C2381985DFA400059AAC /* Task.h */,
-				3520C2391985DFA400059AAC /* Task.m */,
+				3520C23B19865B3500059AAC /* Models */,
 				358CA4221985C6C700001A06 /* ViewController.h */,
 				358CA4231985C6C700001A06 /* ViewController.m */,
 				358CA4251985C6C700001A06 /* Main.storyboard */,

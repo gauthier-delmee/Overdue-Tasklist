@@ -49,13 +49,13 @@
 #pragma mark - Actions
 
 - (IBAction)addTaskButtonPressed:(UIButton *)sender {
-    [self.delegate didCancel];
-}
-
-- (IBAction)cancelButtonPressed:(UIButton *)sender {
     Task *newTask = [self returnNewTask];
     
     [self.delegate didAddTask:newTask];
+}
+
+- (IBAction)cancelButtonPressed:(UIButton *)sender {
+    [self.delegate didCancel];
 }
 
 #pragma mark - Helper Methods
