@@ -159,5 +159,10 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"in accessoryButtonTappedForRowWithIndexPath");
+    [self performSegueWithIdentifier:@"toDetailTaskViewControllerSegue" sender:indexPath];
+}
+
 
 @end
